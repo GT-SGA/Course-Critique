@@ -1,0 +1,177 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Documentation for the Course Critique API",
+    "version": "1.0.0",
+    "title": "Course Critique Swagger",
+    "contact": {
+      "email": "cheffley6@gatech.edu"
+    },
+    "license": {
+      "name": "Apache 2.0"
+    }
+  },
+  "tags": [
+    {
+      "name": "data",
+      "description": "Grade distribution information"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/course": {
+      "get": {
+        "tags": [
+          "data"
+        ],
+        "summary": "Get grade data by course",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "courseID",
+            "description": "ID of the course e.g. 'ACCT 2101'",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful execution",
+            "examples": {
+              "application/json": {
+                "header": [
+                {
+                "course_name": "Accounting I: Financial Accounting",
+                "description": "An introduction to the measurement and financial reporting of organizations and the interpretation of the resulting financial statements. Credit not allowed for MGT 3000 and ACCT 2101.",
+                "credits": 3,
+                "avg_gpa": 3.15,
+                "avg_a": 43.6,
+                "avg_b": 30.2,
+                "avg_c": 13.7,
+                "avg_d": 4.2,
+                "avg_f": 2.3,
+                "avg_w": 5.1,
+                "full_name": "ACCT 2101 - Accounting I: Financial Accounting"
+                }
+                ],
+                "raw": [
+                {
+                "instructor_gt_username": "rblunck3",
+                "instructor_name": "Blunck, Ryan",
+                "link": "https://www.ratemyprofessors.com/ShowRatings.jsp?tid=2511722&showMyProfs=true",
+                "class_size_group": "Very Large (50 students or more)",
+                "GPA": 3.42,
+                "A": 58.8,
+                "B": 23.5,
+                "C": 5.9,
+                "D": 4.4,
+                "F": 1.5,
+                "W": 4.4,
+                "sections": 1
+                }]
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Course not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      }
+    },
+    "/prof": {
+      "get": {
+        "tags": [
+          "data"
+        ],
+        "summary": "Get grade data by professor",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "profID",
+            "description": "The professor's GT username",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "by",
+            "description": "(should always be either 'term' or 'section') Indicator for whether the rows returned are to be aggregated by term or by section",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful execution",
+            "examples": {
+              "application/json": {
+                  "header": [
+                    {
+                    "instructor_name": "Kilgore, Michael Timothy",
+                    "link": "https://www.ratemyprofessors.com/ShowRatings.jsp?tid=1103580&showMyProfs=true",
+                    "avg_gpa": 3.01,
+                    "avg_a": 29.3,
+                    "avg_b": 38.3,
+                    "avg_c": 16.2,
+                    "avg_d": 2.8,
+                    "avg_f": 1.9,
+                    "avg_w": 6.1
+                    }
+                  ],
+                  "raw": [
+                    {
+                    "course_id": "ACCT 2101",
+                    "Section": "TSC",
+                    "Term": "Fall 2010",
+                    "class_size_group": "Large (31-49 students)",
+                    "Level": "Undergraduate",
+                    "GPA": 2.45,
+                    "A": 20.4,
+                    "B": 24.5,
+                    "C": 18.4,
+                    "D": 18.4,
+                    "F": 4.1,
+                    "W": 14.3
+                    },
+                  ]
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Prof not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}

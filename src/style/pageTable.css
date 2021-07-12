@@ -1,0 +1,36 @@
+.dark-mode div{
+  border-color: #606060 !important;
+}
+
+body.dark-mode .course-table {
+  background-color: rgb(61, 61, 61);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+body.dark-mode .course-table-head {
+  background-color: #333333;
+  transition: background-color 0.3s ease;
+  color: white;
+  border-color: #606060 !important;
+}
+
+body.dark-mode .prof-table {
+  background-color: rgb(61, 61, 61);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+body.dark-mode .prof-table-head {
+  background-color: #333333;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+body.dark-mode .dropdown-menu.show {
+  background-color:  rgb(61, 61, 61);
+  color: white;
+}
+
+body.light-mode .dropdown-menu.show {
+  background-color:  white;
+  color: black;
+}

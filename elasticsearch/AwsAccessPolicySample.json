@@ -1,0 +1,42 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "es:ESHttpGet",
+      "Resource": "<AWS ARN US EAST NUMBER>:domain/courseque/*"
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "<AWS ARN NUMBER>:user/junchen"
+      },
+      "Action": "es:*",
+      "Resource": "<AWS ARN US EAST NUMBER>:domain/coursue/*"
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "es:*",
+      "Resource": "<AWS ARN US EAST NUMBER>:320038:domain//*",
+      "Condition": {
+        "IpAddress": {
+          "aws:SourceIp": "<IP ADDRESS>"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "<AWS ARN NUMBER>:role/service-role/critt-role-pfrc21n8"
+      },
+      "Action": "es:ESHttpPost",
+      "Resource": "<AWS ARN US EAST NUMBER>:domain/c/*"
+    }
+  ]
+}

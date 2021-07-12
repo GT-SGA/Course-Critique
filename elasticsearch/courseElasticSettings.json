@@ -1,0 +1,73 @@
+{
+    "settings": {
+        "analysis": {
+            "analyzer": {
+                "autocomplete": {
+                    "tokenizer": "custom_tokenizer",
+                    "filter" : ["lowercase", "worddelimit"]
+                },
+                "autocomplete_search" : {
+        			"type" : "custom",
+        		    "tokenizer": "keyword",
+        			"filter": ["lowercase"]
+    			 }
+            },
+            "filter" : {
+            	 "worddelimit" : {
+                            "split_on_numerics": "true",
+                            "preserve_original": "true",
+                            "generate_number_parts": "true",
+                            "catenate_all": "true",
+                            "split_on_case_change": "true",
+                            "type": "word_delimiter_graph",
+                            "stem_english_possessive": "false"
+
+                  }
+            },
+            
+            "tokenizer": {
+        
+                "custom_tokenizer": {
+                  "type": "edge_ngram",
+                  "min_gram": 2,
+                  "max_gram": 15,
+                  "token_chars": [
+                                "letter",
+                                "digit",
+                                "whitespace",
+                                "symbol",
+                                "punctuation",
+                                "dash_punctuation",
+                                "initial_quote_punctuation"
+
+                    
+                    
+                  ]
+                }
+          }
+        }
+    },
+        "mappings": {
+          
+                "properties": {
+                     "course_id": {
+                    "type": "text",
+                    "fields": {
+                        "raw": { 
+                            "type":  "keyword"
+                         }
+                    },
+                    "analyzer": "autocomplete",
+                    "search_analyzer": "autocomplete_search"
+                },
+                "suggest": {
+                    "type": "completion",
+                    "analyzer": "simple",
+                    "preserve_separators": true,
+                    "preserve_position_increments": true,
+                    "max_input_length": 50
+                }
+                }
+           
+    }
+}

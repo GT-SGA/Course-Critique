@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{SERVER_PORT} !=443 [OR]
+RewriteCond %{HTTP_HOST} ^www\.
+RewriteRule ^(.*)$ https://critique.gatech.edu/$1 [R=301,L]

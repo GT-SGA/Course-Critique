@@ -1,0 +1,203 @@
+.App {
+  text-align: center;
+}
+
+.doggos {
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.loadDiv {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.dropdown-menu {
+  white-space: nowrap;
+  max-height: 250px;
+  max-width: 225px;
+  overflow-y: scroll;
+}
+
+body.light-mode {
+  background-color: #f9f9f9;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+body.dark-mode {
+  transition: background-color 0.3s ease;
+  background-color: #333;
+  color: #f9f9f9;
+}
+
+.illo {
+  max-width: 100%;
+  height: auto;
+}
+ 
+.dm-button {
+  float: right;
+}
+
+.dark-mode .course-title {
+  color: #f9f9f9;
+}
+
+.light-mode .course-title {
+  color: #111111;
+}
+
+.react-bs-container-body {
+  display: block;
+  position: absolute;
+  max-height: 100%;
+  max-width: 100%;
+  overflow-y: auto;
+}
+
+.react-bs-table.react-bs-table-bordered {
+  border-radius: 2px;
+}
+
+.dark-mode .col {
+  color: #f9f9f9;
+}
+
+.dark-mode .sortable {
+  border-color: #606060;
+}
+
+.dark-mode .expand-cell-header {
+  border-color: #606060;
+}
+
+.dark-mode .reset-expansion-style {
+  border-color: #606060;
+}
+
+.prof-table th, .course-table th {
+  line-height: 15px;
+}
+
+.dark-mode .sortable, .dark-mode .expand-cell-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: rgb(61, 61, 61);
+}
+
+.light-mode .sortable, .light-mode .expand-cell-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #f9f9f9;
+}
+
+.dark-mode .prof-table td {
+  border-color: #606060 !important;
+}
+
+.dark-mode .course-table td {
+  border-color: #606060 !important;
+}
+
+.dark-mode .sort-column {
+  border-color: #606060 !important;
+  border-top: #606060 !important;
+}
+
+.searchbar {
+  background-color: white;
+  border-radius: 4px;
+}
+
+.dark-mode .searchbar{
+  background-color: #272727;
+  border-radius: 4px;
+}
+
+.dark-mode #searchbar {
+  color: white !important;
+  opacity: 1;
+}
+
+.light-mode #searchbar {
+  color: black !important;
+}
+
+.MuiInputBase-input::placeholder {
+  color: #949494 !important;
+  opacity: 1 !important;
+}
+
+.dark-mode .MuiInputBase-input::placeholder {
+  color: #919191 !important;
+  opacity: 1 !important;
+}
+
+.dark-mode .footer-text {
+  color: #B3B3B3;
+  text-decoration: none; 
+}
+.dark-mode .footer-text:hover {
+  color: #82A1DC ;
+  text-decoration: none; 
+}
+
+.light-mode .footer-text {
+  color: #737373;
+  text-decoration: none; 
+}
+.light-mode .footer-text:hover {
+  color: #007BFF;
+  text-decoration: none; 
+} 
+
+.footer-text {
+  font-size: small;
+}
+
+.dark-mode #searchbar-popup {
+  background-color: #272727;
+  color: white;
+}
+
+.light-mode #searchbar-popup {
+  background-color: white;
+  color: black;
+}
+
+.MuiAutocomplete-endAdornment button {
+  color: grey;
+}
+.dark-mode .home-text {
+  color: white;
+}
+
+.light-mode .home-text {
+  color: black;
+}

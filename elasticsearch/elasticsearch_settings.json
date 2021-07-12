@@ -1,0 +1,67 @@
+{
+    "settings": {
+        "analysis": {
+            "analyzer": {
+                "autocomplete": {
+                    "tokenizer": "custom_tokenizer",
+                    "filter" : ["lowercase", "worddelimit"]
+                },
+                "autocomplete_search" : {
+        			"type" : "custom",
+        		    "tokenizer": "keyword",
+        			"filter": ["lowercase"]
+    			 }
+            },
+            "filter" : {
+            	 "worddelimit" : {
+                     "type" : "word_delimiter_graph",
+                     "catenate_all" : true,
+                     "split_on_case_change" : true,
+                     "split_on_numerics" : true,
+                     "stem_english_possessive":false,
+                     "generate_number_parts" : true,
+                     "preserve_original":true
+                  }
+            },
+            
+            "tokenizer": {
+           
+                "custom_tokenizer": {
+                  "type": "edge_ngram",
+                  "min_gram": 2,
+                  "max_gram": 30,
+                  "token_chars": [
+                    "letter",
+                    "digit",
+                    "whitespace",
+                    "symbol",
+                    "punctuation",
+                    "dash_punctuation",
+                    "initial_quote_punctuation"
+                    
+                    
+                  ]
+                }
+          }
+        }
+    },
+        "mappings": {
+          
+                "properties": {
+                    "course_id": {
+                    	"type": "text",
+                    	"index": true,
+                        "analyzer": "autocomplete",
+                        "search_analyzer": "autocomplete_search"
+                    },
+                    "suggest":{
+                    	 "type": "completion",
+                    	 "preserve_separators": true,
+                         "preserve_position_increments": true
+                    }
+                   
+                  
+                }
+           
+    }
+}

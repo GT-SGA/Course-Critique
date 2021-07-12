@@ -1,0 +1,124 @@
+*{
+  font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
+}
+
+.page-header {
+  padding: 12px;
+  padding-top: 1.5rem;
+}
+
+.lite-header {
+  font-size: 14px;
+  text-align: center;
+}
+
+.center-table {
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+.table-header {
+  width: auto;
+  font-size: 14px;
+  display: flex;
+  max-width: 700px; /* 600 for single column */
+}
+
+.dark-mode .course-header a{
+  color: #BDCBFF !important;
+} 
+
+.dark-mode .prof-head a {
+  color: #BDCBFF !important;
+}
+
+.light-mode .course-header a {
+  color: #0065D1;
+}
+
+.light-mode .prof-head a {
+  color: #0065D1;
+}
+
+.btn-primary {
+  background-color: #3F6BBE    !important;
+  border-color: #3F6BBE    !important;
+}
+
+.dark-mode .btn-primary {
+  background-color: #82A1DC    !important;
+  border-color: #82A1DC !important;
+}
+
+.table-header th {
+    text-align: center !important;
+    font-weight: 700;
+    color: #333333;
+    border-top: 0 !important;
+}
+
+.dark-mode .table-header th {
+  border-color: #606060 !important;
+}
+
+body.light-mode {
+  color: #333;
+}
+body.dark-mode .table-header th {
+  color: #B3B3B3;
+}
+.table-header td {
+  text-align: center !important;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+  border-top: 1px solid #dddddd;
+}
+
+body.dark-mode .table-header td {
+  background-color:rgb(61, 61, 61);
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.headerTable {
+  font-size: 14px;
+}
+
+/* .order {
+  display: flex;
+  flex-direction: column-reverse;
+} */
+.order {
+ /* display: flex;
+ flex-direction: column-reverse; */
+ float: right;
+}
+
+.caret {
+  display: inline-block; 
+  width: 0;
+  height: 0;
+  /* margin-left: 2px;  */
+  margin: 0 !important;
+  vertical-align: middle;
+  border-top: 6px dashed;
+  border-top: 6px solid \9;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+}
+
+.dropup .caret, .navbar-fixed-bottom .dropdown .caret {
+  border-top: 0;
+  margin: 0 !important;
+  border-bottom: 8px dashed;
+  border-bottom: 8px solid \9;
+  content: "";
+}
+
+/* .dropdown {
+  height: 40px !important;
+}
+
+.dropup {
+  height: 40px !important;
+} */
