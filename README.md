@@ -204,3 +204,5 @@ Return Value:
 }
 
 
+## License
+This software is available under the the [MIT License](https://github.com/GT-SGA/Course-Critique/blob/main/LICENSE).
